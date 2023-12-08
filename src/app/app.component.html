@@ -1,7 +1,13 @@
 <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;height: 100%;">
-
+  <mat-form-field class="example-form-field" style="height: 25%;width: 100%;">
+    <mat-label>rate</mat-label>
+    <input matInput type="text" [(ngModel)]="formula" style="height: 100%; font-size: 50px;">
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-form-field>
   
-  <mat-button-toggle-group [style.font-size.px]="50" name="fontStyle" aria-label="Font Style" (change)="change($event)">
+  <mat-button-toggle-group [style.font-size.px]="50" name="fontStyle" aria-label="Font Style" [(ngModel)]="profit" >
     <mat-button-toggle value="15" >15</mat-button-toggle>
     <mat-button-toggle value="20">20</mat-button-toggle>
     <mat-button-toggle value="25">25</mat-button-toggle>
@@ -11,8 +17,8 @@
   <div style="height: 10px;"></div>
   <mat-form-field class="example-form-field" style="height: 25%;width: 100%;">
     <mat-label>JPY</mat-label>
-    <input matInput type="text" [(ngModel)]="calculator.inputValue" style="height: 100%; font-size: 50px;">
-    <button matSuffix mat-icon-button aria-label="Clear" (click)="calculator.inputValue=''">
+    <input matInput type="text" [(ngModel)]="inputValue" style="height: 100%; font-size: 50px;">
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
       <mat-icon>clear</mat-icon>
     </button>
   </mat-form-field>
@@ -20,7 +26,7 @@
   
 
   <div style="font-size: 40px">
-    {{calculate(calculator.inputValue, calculator.formula, profit)}}
+    {{calculate(inputValue, formula, profit)}}
     <span style="font-size: 15px">RMB</span>
   </div>
 </div>

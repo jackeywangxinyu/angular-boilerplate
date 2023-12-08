@@ -1,15 +1,15 @@
 <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;height: 100%;">
 
   
-  <mat-button-toggle-group name="fontStyle" aria-label="Font Style" (change)="change($event)">
-    <mat-button-toggle value="15">15</mat-button-toggle>
+  <mat-button-toggle-group [style.font-size.px]="50" name="fontStyle" aria-label="Font Style" (change)="change($event)">
+    <mat-button-toggle value="15" >15</mat-button-toggle>
     <mat-button-toggle value="20">20</mat-button-toggle>
     <mat-button-toggle value="25">25</mat-button-toggle>
     <mat-button-toggle value="30">30</mat-button-toggle>
   </mat-button-toggle-group>
   <div style="height: 10px;"></div>
   <div style="height: 10px;"></div>
-  <mat-form-field class="example-form-field" style="height: 15%;">
+  <mat-form-field class="example-form-field" style="height: 25%;width: 100%;">
     <mat-label>JPY</mat-label>
     <input matInput type="text" [(ngModel)]="calculator.inputValue" style="height: 100%; font-size: 50px;">
     <button matSuffix mat-icon-button aria-label="Clear" (click)="calculator.inputValue=''">

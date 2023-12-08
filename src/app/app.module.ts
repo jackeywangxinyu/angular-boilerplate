@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule,CommonModule
+    MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatIconModule,CommonModule, MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

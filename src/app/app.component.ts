@@ -9,16 +9,20 @@ export class AppComponent {
   profit = 15
   calculator = {
     formula: '* 0.062',
-    inputValue: 0,
+    inputValue: '',
     outputValue: 0
   }
-  calculate(num: number, formula: string, profit: number) {
-    console.log(profit);
-    
-    const fullFormula = (num.toString() || 0) + formula;
+  calculate(numStr: string, formula: string, profit: number) {
+    const num = Number(numStr)
     let result = 9999999;
     try {
+      if (typeof num !== 'number') {
+        return ''
+      }
+      const fullFormula = (num || 0) + formula;
+      
       result = eval(fullFormula) + Number(profit);
+      
     } catch (error) {
       console.log(error);
       
